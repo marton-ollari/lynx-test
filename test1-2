@@ -1,0 +1,18 @@
+1,
+
+SELECT gender as Gender, AVG(duration) as avg 
+FROM customers INNER JOIN calls
+ON (customers.id = calls.caller_id OR customers.id = calls.callee_id)
+GROUP BY gender;
+
+2,
+
+SELECT count(*) from parents INNER JOIN children
+  ON parents.NAME LIKE concat('%', children.FAMILY_NAME, '%')
+
+SELECT count(*) from parents INNER JOIN children
+  ON parents.FAMILY_NAME = children.FAMILY_NAME
+
+I think the second query has faster runtime with bigger input
+
+
